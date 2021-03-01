@@ -6,9 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently \"npm run client\" \"npm run server\"",
-    "client": "npm run start --prefix client/",
+    "client": "npm run start --prefix client",
     "server": "npm run start --prefix server",
-    "build": ""
+    "build": "npm i && concurrently \"npm run client-install\" \"npm run server-install\"",
+    "client-install": "npm install --prefix client",
+    "server-install": "npm install --prefix server"
   },
   "author": "",
   "license": "ISC",

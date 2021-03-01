@@ -21,11 +21,11 @@ app.post('/product', (req, res)=>{
         for(let i = 0; i < productsArray.length; i++){
             if(userInput === productsArray[i].id){
                 res.json(productsArray[i])
-            } else {
+            } else{
                 res.sendStatus(404)
             }
         }
-    } 
+    }
 })  
 
 app.listen(port, ()=>{

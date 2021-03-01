@@ -1,7 +1,7 @@
 ### Fullstack Product Serve Web Application
 To preface, I would like to note that this project was written entirely in JavaScript and is seperated by a client and server. React being the main library used on the client side and express being the main library used server side. Throughout my design, I have left notes further explaining how each function and variable is being used. 
 ### Client
-As I explained before, I am using react as my main library to aid in writing the UI. I am also using React-bootstrap for responsivenes. I am also using the axios library to make my post request to the server. 
+As I explained before, I am using react as my main library to aid in writing the UI. I am also using React-bootstrap for responsiveness. I am also using the axios library to make my post request to the server. 
 
 Opening the project for the first time presents the user with a stock image and a blank title and link section. 
 
@@ -28,3 +28,7 @@ Q/A.
 I was also asked to do this project using get request, but couldn't seem to find an apporpriate way to do that as I was gathering input from the user. So, I would like to explore that more. 
 
 6. If I were to critique my code, I think my comments could use work. I have the feeling I might be brushing over things that are clear to me because I wrote the code.
+
+
+***The build file is completely dependent on your system and may not need to be called to install specific dependencies, if you have the required dependencies. For this project I used both npm 6.14.11/7.5.4 and node 14.16.0/14.15.0.
+

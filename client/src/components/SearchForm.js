@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import defaultImage from '../assets/image.jpg';
+import Output from './Output';
+import axios from 'axios';
 import {
     Row,
     Col,
@@ -6,18 +9,13 @@ import {
     InputGroup,
     Button
 } from 'react-bootstrap';
-import axios from 'axios';
-import defaultImage from '../assets/image.jpg';
-import Output from './Output';
-
 
 /* I had to name this component as SearchForm as opposed to "Form" 
 because that name was already being used by the React Bootstrap 
 library located in the return statement below*/
 
 export default function SearchForm(){
-    //I declare two state object
-    //The first hold the users input
+    //The first state object holds the users input
     //The second holds the payload sent back from the server
     let [id, setId] = useState();
     let [productPayload, setProductPayload] = useState()
@@ -28,7 +26,7 @@ export default function SearchForm(){
         setId(id);
     }
 
-    /*This function handles each submit and 
+    /*This function handles each submission and 
     if the submission is valid will send a post request to
     the server */
     function handleSubmit(event){
@@ -51,7 +49,7 @@ export default function SearchForm(){
     }
 
     /*Upon a succuessful post request a payload object will initialize
-    If there is such an obejct a new view with the correct attributes will appear.
+    If this object exist a new view with the correct attributes will appear.
     These attributes will appear inside the Output component and are passed through 
     the productPayload.image, productPayload.title, and productPayload.link properties. 
     And if the productPayLoad object has not be initialized, like when the page first loads
