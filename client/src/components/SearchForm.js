@@ -32,19 +32,24 @@ export default function SearchForm(){
     function handleSubmit(event){
         event.preventDefault();
 
-        if(isNaN(id)){
-            alert("Please enter a number!")
-        } else {
+        if(id.match("^[A-Za-z0-9]+$")){
             axios.post('http://localhost:3001/product/',{id})
             .then((res)=>{
                 productPayload = res.data;
                 setProductPayload(productPayload)
                 console.log(productPayload)
             })
-            .catch((err) =>{
-                console.log(err)
-                alert(err)
+            .catch((error) =>{
+                if (error.response) {
+                    console.log(error.response.status);
+                  } else if (error.request) {
+                    console.log(error.request);
+                  } else {
+                    console.log('Error', error.message);
+                  }
             })
+        } else {
+            alert("Numbers and letters only please!")
         }
     }
 

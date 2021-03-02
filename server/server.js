@@ -16,16 +16,22 @@ app.use(bodyParser.json())
 app.post('/product', (req, res)=>{
     let productsArray = products.records;
     let userInput = req.body.id;
+    let flag = false;
+    let product;
 
-    if(userInput){
-        for(let i = 0; i < productsArray.length; i++){
-            if(userInput === productsArray[i].id){
-                res.json(productsArray[i])
-            } else{
-                res.sendStatus(404)
-            }
+    for(let i = 0; i < productsArray.length; i++){
+        if(userInput === productsArray[i].id){
+            product = productsArray[i];
+            flag = true
         }
     }
+
+    if(!flag){
+        res.sendStatus(404)
+    } else{
+        res.json(product)
+    }
+    
 })  
 
 app.listen(port, ()=>{
